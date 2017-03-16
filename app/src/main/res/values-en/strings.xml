@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hruba_mzda">Sallary incl. taxes</string>
+    <string name="cista_mzda">Sallary:</string>
+    <string name="na_koruny">Crown, no decimal places</string>
+    <string name="neplatny_vstup">Error in input!</string>
+    <string name="neznama">not yet known</string>
+    <string name="vypocti">Count it!</string>
+</resources>
