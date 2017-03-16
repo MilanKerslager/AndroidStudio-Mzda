@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mzda</string>
+    <string name="hruba_mzda">Hrubá mzda</string>
+    <string name="cista_mzda">Čistá mzda</string>
+    <string name="vypocti">Vypočti!</string>
+    <string name="na_koruny">V celých korunách</string>
+    <string name="neznama">zatím neznámá</string>
+    <string name="neplatny_vstup">Neplatný vstup!</string>
+</resources>

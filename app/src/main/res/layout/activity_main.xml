@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cz.kerslager.android.mzda.MainActivity">
+
+    <EditText
+        android:id="@+id/editTextHrubaMzda"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/na_koruny"
+        android:inputType="number"
+        app:layout_constraintLeft_toRightOf="@+id/textView4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/hruba_mzda"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextHrubaMzda"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/buttonVypocti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonKlik"
+        android:text="@string/vypocti"
+        app:layout_constraintLeft_toLeftOf="@+id/editTextHrubaMzda"
+        app:layout_constraintTop_toBottomOf="@+id/editTextHrubaMzda" />
+
+    <TextView
+        android:id="@+id/textViewCistaMzda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/neznama"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@+id/buttonVypocti"
+        app:layout_constraintTop_toBottomOf="@+id/buttonVypocti" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:text="@string/cista_mzda"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewCistaMzda"
+        app:layout_constraintRight_toLeftOf="@+id/textViewCistaMzda" />
+</android.support.constraint.ConstraintLayout>
