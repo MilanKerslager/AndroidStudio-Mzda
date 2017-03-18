@@ -2,6 +2,10 @@
 
 package cz.kerslager.android.mzda;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +15,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.DateFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -63,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menu_oprogramu:
                 // zobrazíme zprávu
-                showToast(getResources().getString(R.string.nejlepsi_program));
+                //showToast(getResources().getString(R.string.nejlepsi_program));
+                alertView(programInfo());
                 break;
             case R.id.menu_ukoncit:
                 // uzavření aktivity (ukončení programu)
@@ -71,6 +78,53 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private String programInfo() {
+        return getResources().getString(R.string.program) + ": " +
+                getResources().getString(R.string.app_name) + "\n" +
+                getResources().getString(R.string.verze) + ": " +
+                getMyVersionName() + "\n" +
+                getResources().getString(R.string.sestaveno) + ": " +
+                getMyBuildDate();
+    }
+
+    private String getMyVersionName() {
+        Context context = getApplicationContext(); // or activity.getApplicationContext()
+        PackageManager packageManager = context.getPackageManager();
+        String packageName = context.getPackageName();
+        String myVersionName = getResources().getString(R.string.nedostupne);
+        try {
+            myVersionName = packageManager.getPackageInfo(packageName, 0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return myVersionName;
+    }
+
+    private String getMyBuildDate() {
+        Context context = getApplicationContext(); // or activity.getApplicationContext()
+        PackageManager packageManager = context.getPackageManager();
+        String packageName = context.getPackageName();
+        String myVersionName = getResources().getString(R.string.nedostupne);
+        try {
+            myVersionName = DateFormat.getDateTimeInstance().format(
+                    packageManager.getPackageInfo(packageName, 0).lastUpdateTime);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return myVersionName;
+    }
+
+    private void alertView(String message) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle(getResources().getString(R.string.o_programu))
+                .setMessage(message)
+                .setPositiveButton(getResources().getString(R.string.ok),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialoginterface, int i) {
+                            }
+                        }).show();
     }
 
     // zobrazit toast zprávu

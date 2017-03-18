@@ -9,4 +9,9 @@
     <string name="o_programu">About</string>
     <string name="ukoncit">Exit</string>
     <string name="nejlepsi_program">This is the best program ever :-)</string>
+    <string name="ok">OK</string>
+    <string name="nedostupne">not available</string>
+    <string name="program">Program</string>
+    <string name="sestaveno">Build</string>
+    <string name="verze">Version</string>
 </resources>

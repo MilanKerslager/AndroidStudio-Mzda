@@ -9,4 +9,9 @@
     <string name="o_programu">O programu</string>
     <string name="ukoncit">Ukončit</string>
     <string name="nejlepsi_program">Tohle je nejlepší program :-)</string>
+    <string name="ok">OK</string>
+    <string name="nedostupne">nedostupné</string>
+    <string name="program">Program</string>
+    <string name="verze">Verze</string>
+    <string name="sestaveno">Sestaveno</string>
 </resources>
