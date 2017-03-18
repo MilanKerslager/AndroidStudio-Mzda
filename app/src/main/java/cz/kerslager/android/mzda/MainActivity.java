@@ -1,12 +1,4 @@
-/*
- * Mzda (c) 2017 by Milan Kerslager <milan.kerslager@gmail.com>
- *
- * Mzda is licensed under a
- * Creative Commons Attribution-ShareAlike 4.0 International License.
- *
- * You should have received a copy of the license along with this
- * work. If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
- */
+// Aplikace pro výpočet čisté mzdy ze zadané hrubé mzdy
 
 package cz.kerslager.android.mzda;
 
