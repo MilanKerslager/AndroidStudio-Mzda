@@ -5,7 +5,7 @@ To clone source to your own Android Studio go to menu File → New → Project f
 use this URL: https://github.com/MilanKerslager/AndroidStudio-Mzda.git
 
 See the main program file:
-[MainActivity.java](app/src/main/java/cz/kerslager/android/Mzda/MainActivity.java)
+[MainActivity.java](app/src/main/java/cz/kerslager/android/mzda/MainActivity.java)
 
 ## In the Czech language
 Jednoduchá aplikace pro výuku programování pro Android.
@@ -15,4 +15,4 @@ Pro naklonování zdrojových kódů do vašeho Android Studia zvolte v menu pol
 File → New → Project from Version Control → GitHub a použijte odkaz: https://github.com/MilanKerslager/AndroidStudio-Mzda.git
 
 Prohlédněte si hlavní soubor s programem:
-[MainActivity.java](app/src/main/java/cz/kerslager/android/Mzda/MainActivity.java)
+[MainActivity.java](app/src/main/java/cz/kerslager/android/mzda/MainActivity.java)
