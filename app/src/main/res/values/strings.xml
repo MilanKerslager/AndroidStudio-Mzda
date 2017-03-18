@@ -6,4 +6,7 @@
     <string name="na_koruny">V celých korunách</string>
     <string name="neznama">zatím neznámá</string>
     <string name="neplatny_vstup">Neplatný vstup!</string>
+    <string name="o_programu">O programu</string>
+    <string name="ukoncit">Ukončit</string>
+    <string name="nejlepsi_program">Tohle je nejlepší program :-)</string>
 </resources>

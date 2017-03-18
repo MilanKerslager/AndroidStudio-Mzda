@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ ${PROJECT_NAME} (c) ${YEAR} by ${USER}
+  ~
+  ~ ${PROJECT_NAME} is licensed under a
+  ~ Creative Commons Attribution-ShareAlike 4.0 International License.
+  ~
+  ~ You should have received a copy of the license along with this
+  ~ work. If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
+  -->
+
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_oprogramu"
+        android:title="@string/o_programu" />
+    <item
+        android:id="@+id/menu_ukoncit"
+        android:title="@string/ukoncit" />
+</menu>

@@ -4,6 +4,9 @@ package cz.kerslager.android.mzda;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -46,6 +49,28 @@ public class MainActivity extends AppCompatActivity {
                 - zamsocialni.intValue() - zamzdravotni.intValue();
         textViewCistaMzda.setText(Long.toString(CistaMzda));
         // při 11000 hrubého musí vyjít 9640 (pouze při slevě na poplatníka)
+    }
+
+    // zobrazení Options Menu v aktuální aktivitě
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater items = getMenuInflater();
+        items.inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // reakce na výběr položky v Options Menu
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_oprogramu:
+                // zobrazíme zprávu
+                showToast(getResources().getString(R.string.nejlepsi_program));
+                break;
+            case R.id.menu_ukoncit:
+                // uzavření aktivity (ukončení programu)
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     // zobrazit toast zprávu

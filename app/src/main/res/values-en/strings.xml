@@ -6,4 +6,7 @@
     <string name="neplatny_vstup">Error in input!</string>
     <string name="neznama">not yet known</string>
     <string name="vypocti">Count it!</string>
+    <string name="o_programu">About</string>
+    <string name="ukoncit">Exit</string>
+    <string name="nejlepsi_program">This is the best program ever :-)</string>
 </resources>
