@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     // seznam odkazů
     private static final String URL_PODLE = "https://www.vypocet.cz/popis-vypoctu-ciste-mzdy";
-    private static final String URL_ZDROJAKY = "https://github.com/MilanKerslager/AndroidStudio-Mzda";
+    private static final String URL_ZDROJ = "https://github.com/MilanKerslager/AndroidStudio-Mzda";
     private static final String URL_SPSSE = "https://www.pslib.cz/";
     private static final String URL_CHYBY = "https://github.com/MilanKerslager/AndroidStudio-Mzda/issues";
 
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.menu_source:
                 // stránka se zdrojovými kody této aplikace
-                openWebPage(URL_ZDROJAKY);
+                openWebPage(URL_ZDROJ);
                 break;
             case R.id.menu_chyby:
                 // webová stránka pro hlášení chyb
