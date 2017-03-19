@@ -4,7 +4,9 @@ package cz.kerslager.android.mzda;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +22,13 @@ import java.text.DateFormat;
 
 public class MainActivity extends AppCompatActivity {
 
+    // seznam odkazů
+    private static final String URL_PODLE = "https://www.vypocet.cz/popis-vypoctu-ciste-mzdy";
+    private static final String URL_ZDROJAKY = "https://github.com/MilanKerslager/AndroidStudio-Mzda";
+    private static final String URL_SPSSE = "https://www.pslib.cz/";
+    private static final String URL_CHYBY = "https://github.com/MilanKerslager/AndroidStudio-Mzda/issues";
+
+    // globální proměnné pro prvky formuláře (Aktivity)
     EditText editTextHrubaMzda;
     TextView textViewCistaMzda;
 
@@ -33,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
     // výpočet čisté mzdy ze zadané hrubé mzdy (po stisknutí tlačítka)
     public void onButtonKlik(View view) {
-        // https://www.vypocet.cz/popis-vypoctu-ciste-mzdy
         long hrubamzda = 0;
         try {
             hrubamzda = Integer.parseInt(editTextHrubaMzda.getText().toString());
@@ -72,6 +80,21 @@ public class MainActivity extends AppCompatActivity {
                 //showToast(getResources().getString(R.string.nejlepsi_program));
                 alertView(programInfo());
                 break;
+            case R.id.menu_basedby:
+                // odkaz na stránku, podle které je udělán výpočet čisté
+                openWebPage(URL_PODLE);
+                break;
+            case R.id.menu_source:
+                // stránka se zdrojovými kody této aplikace
+                openWebPage(URL_ZDROJAKY);
+                break;
+            case R.id.menu_chyby:
+                // webová stránka pro hlášení chyb
+                openWebPage(URL_CHYBY);
+            case R.id.menu_spsse:
+                // webové stránky školy
+                openWebPage(URL_SPSSE);
+                break;
             case R.id.menu_ukoncit:
                 // uzavření aktivity (ukončení programu)
                 finish();
@@ -80,15 +103,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // vytvoření textu pro okno "O programu"
     private String programInfo() {
         return getResources().getString(R.string.program) + ": " +
                 getResources().getString(R.string.app_name) + "\n" +
                 getResources().getString(R.string.verze) + ": " +
                 getMyVersionName() + "\n" +
                 getResources().getString(R.string.sestaveno) + ": " +
-                getMyBuildDate();
+                getMyBuildDate() + "\n\n" +
+                getResources().getString(R.string.pro_vyuku);
     }
 
+    // zjištění verze programu (může být uvedeno ve vlastnostech projektu)
     private String getMyVersionName() {
         Context context = getApplicationContext(); // or activity.getApplicationContext()
         PackageManager packageManager = context.getPackageManager();
@@ -102,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         return myVersionName;
     }
 
+    // datum a čas, kdy byl balíček APK s programem sestaven
     private String getMyBuildDate() {
         Context context = getApplicationContext(); // or activity.getApplicationContext()
         PackageManager packageManager = context.getPackageManager();
@@ -116,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         return myVersionName;
     }
 
+    // plovoucí okno s volitelnou zprávou a jediným tlačítkem "OK" (okno s informací)
     private void alertView(String message) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle(getResources().getString(R.string.o_programu))
@@ -135,4 +163,18 @@ public class MainActivity extends AppCompatActivity {
         );
         myToast.show();
     }
+
+    // otevření odkazu pomocí externí aplikace (pomocí vytvoření objektu Intent)
+    private void openWebPage(String url) {
+        try {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+        } catch (NullPointerException e) {
+            showToast(getResources().getString(R.string.zadna_data));
+        } catch (android.content.ActivityNotFoundException e) {
+            showToast(getResources().getString(R.string.neni_browser));
+        }
+    }
+
 }

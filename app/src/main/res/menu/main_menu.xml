@@ -16,6 +16,18 @@
         android:id="@+id/menu_oprogramu"
         android:title="@string/o_programu" />
     <item
+        android:id="@+id/menu_basedby"
+        android:title="@string/zdroj" />
+    <item
+        android:id="@+id/menu_source"
+        android:title="@string/zdojove_kody" />
+    <item
+        android:id="@+id/menu_chyby"
+        android:title="@string/hlaseni_chyb" />
+    <item
+        android:id="@+id/menu_spsse"
+        android:title="@string/spsse" />
+    <item
         android:id="@+id/menu_ukoncit"
         android:title="@string/ukoncit" />
 </menu>

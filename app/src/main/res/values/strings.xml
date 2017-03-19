@@ -14,4 +14,11 @@
     <string name="program">Program</string>
     <string name="verze">Verze</string>
     <string name="sestaveno">Sestaveno</string>
+    <string name="zdroj">Vytvořeno podle...</string>
+    <string name="neni_browser">Nelze obsloužit požadavek. Nainstalujte prosím webový prohlížeč.</string>
+    <string name="zadna_data">Chyba: Chybí data.</string>
+    <string name="pro_vyuku">Aplikace pro výuku programování v systému Android na SPŠSE a VOŠ v Liberci.</string>
+    <string name="spsse">SPŠSE a VOŠ v Liberci</string>
+    <string name="zdojove_kody">Zdrojové kody</string>
+    <string name="hlaseni_chyb">Hlášení chyb</string>
 </resources>

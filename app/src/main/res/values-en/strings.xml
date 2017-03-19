@@ -14,4 +14,11 @@
     <string name="program">Program</string>
     <string name="sestaveno">Build</string>
     <string name="verze">Version</string>
+    <string name="zdroj">Designed by...</string>
+    <string name="neni_browser">Can\'t handle request. Install web browser, please.</string>
+    <string name="zadna_data">Error: No data.</string>
+    <string name="pro_vyuku">Applications for teaching the programming in Android on SPSSE and VOS in Liberec.</string>
+    <string name="spsse">SPSSE and VOS in Liberec</string>
+    <string name="zdojove_kody">Source code</string>
+    <string name="hlaseni_chyb">Bug reporting</string>
 </resources>
