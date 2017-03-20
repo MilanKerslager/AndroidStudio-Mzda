@@ -24,3 +24,4 @@
 !\.idea/copyright
 
 *.apk
+.idea/modules.xml
