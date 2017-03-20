@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_chyby:
                 // webová stránka pro hlášení chyb
                 openWebPage(URL_CHYBY);
+                break;
             case R.id.menu_spsse:
                 // webové stránky školy
                 openWebPage(URL_SPSSE);
