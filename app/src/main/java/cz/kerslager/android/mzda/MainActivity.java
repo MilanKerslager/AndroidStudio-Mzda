@@ -102,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
-        // poznamka
     }
 
     // vytvoření textu pro okno "O programu"
