@@ -19,7 +19,9 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_settings);
+        // kvůli tlačítku zpět (v okně Nastavení)
+        // nelze tuto aktivitu vytvořit jednoduše, nýbrž přes fragment
+        // setContentView(R.xml.settings);
 
         // pro zobrazení tlačítka zpět
         getFragmentManager().beginTransaction().replace(android.R.id.content, new MyPreferenceFragment()).commit();
@@ -29,7 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     // pro tlačítko zpět
     @Override
-    public boolean onSupportNavigateUp(){
+    public boolean onSupportNavigateUp() {
         finish();
         return true;
     }

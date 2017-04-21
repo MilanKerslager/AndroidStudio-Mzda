@@ -25,4 +25,5 @@
     <string name="pref_user_name">Sleva na poplatníka</string>
     <string name="pref_user_name_summary">Nastavte slevu na poplatníka</string>
     <string name="pref_user_profile">Nastavení programu</string>
+    <string name="no_value">Nenastaveno</string>
 </resources>

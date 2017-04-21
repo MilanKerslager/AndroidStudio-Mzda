@@ -42,9 +42,17 @@ public class MainActivity extends AppCompatActivity {
         editTextHrubaMzda = (EditText) findViewById(R.id.editTextHrubaMzda);
         textViewCistaMzda = (TextView) findViewById(R.id.textViewCistaMzda);
         textViewInfo = (TextView) findViewById(R.id.textViewInfo);
-
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        textViewInfo.setText(sharedPrefs.getString("prefNaPoplatnika", "Bez hodnoty"));
+    }
+
+    private long getSlevaNaPoplatnika() {
+        long sleva;
+        try {
+            sleva = Long.parseLong(sharedPrefs.getString("prefNaPoplatnika", "0"));
+        } catch (NumberFormatException e) {
+            sleva = 2070; // hodnota pro rok 2017
+        }
+        return sleva;
     }
 
     // výpočet čisté mzdy ze zadané hrubé mzdy (po stisknutí tlačítka)
@@ -63,13 +71,16 @@ public class MainActivity extends AppCompatActivity {
         superhruba = ((superhruba + 100) / 100) * 100;
         // záloha na dan musí být zaokrouhlená na koruny
         long zalohanadanzprijmu = Math.round(superhruba * 0.15);
-        zalohanadanzprijmu -= 2070; // sleva na poplatníka
+        zalohanadanzprijmu -= getSlevaNaPoplatnika(); // sleva na poplatníka
         Double zamsocialni = hrubamzda * 0.065;
         Double zamzdravotni = hrubamzda * 0.045;
         long CistaMzda = hrubamzda - zalohanadanzprijmu
                 - zamsocialni.intValue() - zamzdravotni.intValue();
         textViewCistaMzda.setText(Long.toString(CistaMzda));
         // při 11000 hrubého musí vyjít 9640 (pouze při slevě na poplatníka)
+        textViewInfo.setText(
+                getResources().getString(R.string.pref_user_name) + ": " +
+                Long.toString(getSlevaNaPoplatnika()));
     }
 
     // zobrazení Options Menu v aktuální aktivitě

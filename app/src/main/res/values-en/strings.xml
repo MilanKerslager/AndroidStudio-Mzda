@@ -21,4 +21,9 @@
     <string name="spsse">SPSSE and VOS in Liberec</string>
     <string name="zdojove_kody">Source code</string>
     <string name="hlaseni_chyb">Bug reporting</string>
+    <string name="menu_nastaveni">Settings</string>
+    <string name="pref_user_name">Credit for a taxpayer</string>
+    <string name="pref_user_name_summary">Set credit for a taxpayer</string>
+    <string name="pref_user_profile">Program settings</string>
+    <string name="no_value">No value set</string>
 </resources>
