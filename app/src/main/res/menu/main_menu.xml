@@ -13,6 +13,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/menu_nastaveni"
+        android:title="@string/menu_nastaveni" />
+    <item
         android:id="@+id/menu_oprogramu"
         android:title="@string/o_programu" />
     <item

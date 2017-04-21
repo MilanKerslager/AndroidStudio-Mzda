@@ -5,8 +5,10 @@ package cz.kerslager.android.mzda;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     // globální proměnné pro prvky formuláře (Aktivity)
     EditText editTextHrubaMzda;
-    TextView textViewCistaMzda;
+    TextView textViewCistaMzda, textViewInfo;
+    SharedPreferences sharedPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         editTextHrubaMzda = (EditText) findViewById(R.id.editTextHrubaMzda);
         textViewCistaMzda = (TextView) findViewById(R.id.textViewCistaMzda);
+        textViewInfo = (TextView) findViewById(R.id.textViewInfo);
+
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        textViewInfo.setText(sharedPrefs.getString("prefNaPoplatnika", "Bez hodnoty"));
     }
 
     // výpočet čisté mzdy ze zadané hrubé mzdy (po stisknutí tlačítka)
@@ -75,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
     // reakce na výběr položky v Options Menu
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.menu_nastaveni:
+                Intent i = new Intent(this, SettingsActivity.class);
+                startActivity(i);
+                //textViewInfo.setText(sharedPrefs.getString("prefNaPoplatnika", "Bez hodnoty"));
+                break;
             case R.id.menu_oprogramu:
                 // zobrazíme zprávu
                 //showToast(getResources().getString(R.string.nejlepsi_program));

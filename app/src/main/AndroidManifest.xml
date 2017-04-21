@@ -16,6 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SettingsActivity"
+            android:parentActivityName=".MainActivity">
+            <!-- jeste pridat vlastnost sigleTop do MainActivity -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cz.kerslager.android.mzda.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -21,4 +21,8 @@
     <string name="spsse">SPŠSE a VOŠ v Liberci</string>
     <string name="zdojove_kody">Zdrojové kody</string>
     <string name="hlaseni_chyb">Hlášení chyb</string>
+    <string name="menu_nastaveni">Nastavení</string>
+    <string name="pref_user_name">Sleva na poplatníka</string>
+    <string name="pref_user_name_summary">Nastavte slevu na poplatníka</string>
+    <string name="pref_user_profile">Nastavení programu</string>
 </resources>
